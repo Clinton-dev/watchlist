@@ -19,7 +19,7 @@ def index():
     now_showing_movie = get_movies('now_playing')
     #print(popular_movies)
     title = 'Home - Welcome to The best Movie Review Website Online'
-
+    print(Review.all_review)
     search_movie = request.args.get('movie_query')
 
     if search_movie:
@@ -34,6 +34,7 @@ def movie(id):
     """
     movie = get_movie(id)
     title = f'{movie.title}'
+    reviews = Review.get_reviews(movie.id)
     return render_template('movie.html', title = title, movie= movie)
 
 @app.route('/search/<movie_name>')

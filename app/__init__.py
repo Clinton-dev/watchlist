@@ -10,3 +10,4 @@ app.config.from_pyfile('config.py')
 
 bootstrap = Bootstrap(app) #How most extensions are intialized by passing app instance as parameter
 from app import views
+from app import error

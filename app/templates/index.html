@@ -7,16 +7,23 @@
 {% endblock %}
 
 {% block content %}
+    <div class="container">
+        <form>
+            <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
+            <input type="submit"  value="search movie" class="btn btn-info">
+        </form>
+
+    </div>
     <h3>Popular Movies</h3>
     <ul>
-       {{ macro.dispalyMovieList(popular)}}
+       {{ macro.displayMovieList(popular)}}
     </ul>
     <h3>Upcoming movies</h3>
     <ul>
-        {{ macro.dispalyMovieList(upcoming)}}
+        {{ macro.displayMovieList(upcoming)}}
     </ul>
     <h3>Showing now movies</h3>
     <ul>
-        {{ macro.dispalyMovieList(now_showing)}}
+        {{ macro.displayMovieList(now_showing)}}
     </ul>
 {% endblock %}
